@@ -7,37 +7,26 @@ import {
     useNavigate,
     Outlet,
 } from "react-router-dom";
+import  Appw from './wildcard/Appw'
+
 
 const Home = () => {
-    const navigate = useNavigate();
-
+   
     return (
-        <div>
-            <h2>Home Page</h2>
-            <button onClick={() =>
-                 navigate("/contact")}>Go to Contact</button>
-        </div>
+      <section>
+      <Appw />
+      </section>
     );
 };
-const About = () => (
+
+const Contact = () => {
+
+  return(
   <div>
-      <h2>About Page</h2>
-      <nav>
-          <ul>
-              <li>
-                  <Link to="team">Our Team</Link>
-              </li>
-              <li>
-                  <Link to="company">Our Company</Link>
-              </li>
-          </ul>
-      </nav>
-      <Outlet />
-  </div>
-);
-const Contact = () => <h2>Contact Page</h2>;
-const Team = () => <h2>Team Page</h2>;
-const Company = () => <h2>Company Page</h2>;
+    <p>Content must be contained in a div to work for some reasone</p>
+    
+  </div>)
+};
 
 function App() {
     return (
@@ -46,21 +35,15 @@ function App() {
                 <ul>
                     <li>
                         <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/about">About</Link>
-                    </li>
+                    </li>                    
                     <li>
                         <Link to="/contact">Contact</Link>
                     </li>
                 </ul>
             </nav>
+
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />}>
-                    <Route path="team" element={<Team />} />
-                    <Route path="company" element={<Company />} />
-                </Route>
+                <Route path="/" element={<Home />} />              
                 <Route path="/contact" element={<Contact />} />
             </Routes>
         </Router>
