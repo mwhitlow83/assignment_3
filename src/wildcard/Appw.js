@@ -26,7 +26,7 @@ const deleteWord = (front) => {
 
   return (
     <div className="App">
-    <h1 className="app-header" >Dictionary</h1>   
+    <h1 className="app-header" >To Do List</h1>   
         <main>    
             <WordForm addWord={addWord} />   
            <CardsContainer words={words} deleteWord={deleteWord} />
