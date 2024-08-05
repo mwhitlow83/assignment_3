@@ -11,12 +11,12 @@ export default function ActionForm() {
   return (
     <section className="action-form">
   
-  <form actionm="#" method="get" onSubmit={handleSubmit}>
-    <div className="button-row">  
+  <form action="#" method="get" onSubmit={handleSubmit}>
+    
       <button type="submit" >All</button>
       <button type="submit" >Active</button>
       <button type="submit" >Completed</button>
-    </div>
+  
   </form>
       </section>
   );

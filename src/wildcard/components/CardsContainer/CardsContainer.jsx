@@ -7,7 +7,7 @@ export default function CardsContainer({ words, deleteWord }) {
         <WordCard 
         front={word.front} 
         back={word.back}
-        keys={word.front}
+        key={word.front}
         deleteWord={deleteWord} />
         );
       

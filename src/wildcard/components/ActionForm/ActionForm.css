@@ -1,0 +1,4 @@
+.action-form form{
+    display: flex;   
+    flex-wrap: wrap;
+}
