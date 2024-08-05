@@ -7,15 +7,13 @@ import CardsContainer from './components/CardsContainer/CardsContainer';
 function Appw() {
 
   const [words, setWords] = useState([
-    {front: 'my name', back: 'matt'},
-    {front: 'a', back: '123'},
-    {front: 'ag', back: '30'},
-    {front: 'age', back: '3y'}
+    {front: 'Go to Walmart'}
+  
   ]);
   
 
-  const addWord = (front, back) => {
-    const newWords = [...words, { front, back}];
+  const addWord = (front) => {
+    const newWords = [...words, { front }];
     setWords(newWords);
   }
 
