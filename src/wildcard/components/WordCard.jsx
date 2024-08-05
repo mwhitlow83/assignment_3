@@ -7,6 +7,18 @@ export default function WordCard({front, back, deleteWord}){
     const cardContent = isFront ?  <p className="card-front">Question:{front}</p> : 
     <p className="card-back">Answer:{back}</p>;
     
+    const [
+        selectedValue,
+        setSelectedValue,
+    ] = useState("Radio");
+
+    const handleRadioChange = (
+        value
+    ) => {
+        setSelectedValue(value);
+    };
+
+
     const handleflip = () => {
     setFront(!isFront);
     };
@@ -19,6 +31,11 @@ export default function WordCard({front, back, deleteWord}){
 
     return (
         <div className="word-card" onClick={handleflip}>
+          <input className="radio" type="radio" 
+              // Value={radio}
+                //checked={true} 
+              //  onChange={} 
+          /> 
            <span className="delete-card" onClick={handleDelete}>X</span>
             {cardContent}
         </div>
