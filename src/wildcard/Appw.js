@@ -1,6 +1,6 @@
 import react, { useState } from 'react';
 import WordForm from './components/WordForm/WordForm';
-
+import ActionForm from './components/ActionForm/ActionForm';
 import './components/WordCard.css';
 import CardsContainer from './components/CardsContainer/CardsContainer';
 
@@ -30,6 +30,7 @@ const deleteWord = (front) => {
         <main>    
             <WordForm addWord={addWord} />   
            <CardsContainer words={words} deleteWord={deleteWord} />
+           <ActionForm />
         </main>
     </div>
   );
