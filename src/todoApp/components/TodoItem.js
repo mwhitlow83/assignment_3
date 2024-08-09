@@ -45,7 +45,7 @@ if(e.which === 13) {
              <textarea ref={inputRef} 
                       disabled={inputRef} 
                       defaultValue={item.item} 
-                      onKeyPress={(e) => update(item.id, inputRef.current.value, e)}/>
+                      />
             
         <div className='btns'>
             <motion.button 

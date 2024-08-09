@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import  Appw from './todoApp/Appw.js';
 import './App.css'
+import Contact from './contact.js';
 
 const Home = () => {
    
@@ -19,14 +20,7 @@ const Home = () => {
     ); 
 };
 
-const Contact = () => {
 
-  return(
-  <div>
-    <p>Content must be contained in a div to work for some reason</p>
-    
-  </div>)
-};
 
 function App() {
 
