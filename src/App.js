@@ -3,48 +3,49 @@ import {
     BrowserRouter as Router,
     Routes,
     Route,
-    Link,
-    useNavigate,
-    Outlet,
+    Link
+    
 } from "react-router-dom";
-import  Appw from './wildcard/Appw'
-
+import  Appw from './todoApp/Appw.js';
+import './App.css'
 
 const Home = () => {
    
-    return (
-      <section>
-      <Appw />
-      </section>
-    );
+    return (   
+      <section className="appbody">    
+    <Appw />
+      </section>  
+       
+    ); 
 };
 
 const Contact = () => {
 
   return(
   <div>
-    <p>Content must be contained in a div to work for some reasone</p>
+    <p>Content must be contained in a div to work for some reason</p>
     
   </div>)
 };
 
 function App() {
+
     return (
         <Router>
-            <nav>
-                <ul>
+            <nav className="navi">
+                <ul className="uln">
                     <li>
                         <Link to="/">Home</Link>
                     </li>                    
                     <li>
-                        <Link to="/contact">Contact</Link>
+                        <Link to="/contact"  >Contact</Link>
                     </li>
                 </ul>
             </nav>
 
             <Routes>
-                <Route path="/" element={<Home />} />              
-                <Route path="/contact" element={<Contact />} />
+                <Route path="/" element={<Home />}  />              
+                <Route path="/contact" element={<Contact/>} />
             </Routes>
         </Router>
     );
