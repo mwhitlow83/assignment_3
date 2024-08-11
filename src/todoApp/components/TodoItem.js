@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 
 const TodoItem = (props) => {
-    const {item, updateTodo, removeTodo, completeTodo} = props;
+    const {item, removeTodo, completeTodo} = props;
     
     const inputRef = useRef(true);
 
@@ -16,13 +16,7 @@ const changeFocus = () => {
   inputRef.current.focus();
 }
 
-const update  = (id, value, e) => {
-if(e.which === 13) {
-  //here 13 is key code for enter key
-  updateTodo({id, item:value });
-  inputRef.current.disabled = true;
-}
-};
+
   return (
     <motion.li 
 
