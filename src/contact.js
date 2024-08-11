@@ -1,13 +1,29 @@
 import { useState } from "react";
 import './todoApp/css/main.css';
+import { addContacts } from './todoApp/redux/contactReducer';
+import { connect } from 'react-redux';
 
 
-export default function Contact() {
+const mapStateToProps = (state) => {
+  return {
+    contacts: state,
+  };
+};
+
+
+const mapDispatchToProps = (dispatch) => {
+  return {  
+    addContact: (obj) => dispatch(addContacts(obj)),
+
+  };
+};
 
 
 
 
+const Contact = (props) => {
 
+  
 
   const [formData, setFormData] = useState({name: "",email: "",message: ""});
 
@@ -40,11 +56,14 @@ export default function Contact() {
       <label className="cl" htmlFor="message">Message:</label>
       <textarea id="message" name="message" value={formData.message} onChange={handleChange}/>
 
-      <button className='fb' type="submit">Submit</button>
+      <button className='fb' type="submit"  onClick={() => props.addContact(formData)}
+      >Submit</button>
       <button className='fb' type="reset" onClick={handleReset}
       >Reset</button>
     </form>
-    <p>{state}</p>
+    
     </div>
   );
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Contact);
