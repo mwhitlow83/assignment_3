@@ -7,7 +7,7 @@ import {
     
 } from "react-router-dom";
 import  Appw from './todoApp/Appw.js';
-import './App.css'
+
 import Contact from './contact.js';
 
 const Home = () => {

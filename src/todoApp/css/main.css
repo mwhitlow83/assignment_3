@@ -209,14 +209,22 @@ flex-direction: column;
     color: #333;
   }
   
-  .form
+  form
   {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 20px;
+    margin-right: 40Px;
+    margin-left: 40px;
+
   }
   
-  .fb{
-    padding: 50px;
+  .fb {
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 20px;
+
   }

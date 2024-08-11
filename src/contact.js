@@ -35,8 +35,8 @@ export default function Contact() {
       <label htmlFor="message">Message:</label>
       <textarea id="message" name="message" value={formData.message} onChange={handleChange}/>
 
-      <button className='.fb' type="submit">Submit</button>
-      <button className='.fb' type="reset" onClick={handleReset}
+      <button className='fb' type="submit">Submit</button>
+      <button className='fb' type="reset" onClick={handleReset}
       >Reset</button>
     </form>
     </div>
