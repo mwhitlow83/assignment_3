@@ -209,31 +209,14 @@ flex-direction: column;
     color: #333;
   }
   
-  .cfield{
-    display: inline-table;
-    width: 100px;
-    text-align: left;
-  }
-
-  .cbody{
-    background-color: antiquewhite;
-    height: 100vh;
-
-  }
-  .form-row{
+  .form
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-top: 20px;
-    text-align: center;
   }
-
-  .form-row-b
-    {
-        margin-top: 10px;
-        text-align: center;
-        
-    }
-
-    .b{
-        margin-right: 10px;
-        padding: 10px 30px;
-        border-radius: 10px;
-    }
+  
+  .fb{
+    padding: 50px;
+  }

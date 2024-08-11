@@ -1,7 +1,9 @@
 import { useState } from "react";
+import './todoApp/css/main.css';
 
-export default function Multiple() {
-    
+
+export default function Contact() {
+
   const [formData, setFormData] = useState({name: "",email: "",message: ""});
 
   const handleChange = (event) => {
@@ -9,19 +11,21 @@ export default function Multiple() {
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
      };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (e) => {
 
-    event.preventDefault();
+    e.preventDefault();
     alert(`Name: ${formData.name}, Email: ${formData.email}, Message: ${formData.message}`
     );
     };
 
-    const handleReset = () => {
+    const handleReset = (e) => {
         setFormData({ name: "", email: "", message: "" });
     };
 
   return (
-    <form onSubmit={handleSubmit}>
+
+    <div className="form">
+    <form  onSubmit={handleSubmit}>
       <label htmlFor="name">Name:</label>
       <input type="text" id="name" name="name" value={formData.name} onChange={handleChange}/>
 
@@ -31,9 +35,10 @@ export default function Multiple() {
       <label htmlFor="message">Message:</label>
       <textarea id="message" name="message" value={formData.message} onChange={handleChange}/>
 
-      <button type="submit">Submit</button>
-      <button type="reset" onClick={handleReset}
+      <button className='.fb' type="submit">Submit</button>
+      <button className='.fb' type="reset" onClick={handleReset}
       >Reset</button>
     </form>
+    </div>
   );
 }
