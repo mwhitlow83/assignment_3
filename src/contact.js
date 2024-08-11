@@ -1,62 +1,39 @@
-import React from 'react'
+import { useState } from "react";
 
-const contact = () => {
-  
-    return (
-    <div className="cbody">
-       
-                <div className="form-row">
-                        <label class="cfield">First Name:
-                                <input 
-                                type="text" 
-                                name="first-name" 
-                                required />
-                        </label>
-                </div>
- 
+export default function Multiple() {
+    
+  const [formData, setFormData] = useState({name: "",email: "",message: ""});
 
-                <div className="form-row">
-                        <label class="cfield">Last Name:
-                            <input 
-                                type="text" 
-                                name="last-name" />
-                        </label>
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+     };
 
-                 </div>
-              
-                <div className="form-row">
-                        <label class="cfield">Email:
-                            <input                            
-                                type="email" 
-                                name="email" 
-                            required />
-                        </label>
-                </div>
+  const handleSubmit = (event) => {
 
-         
-            <div className="form-row">
-                <label class="cfield">Comment
-                    <textarea 
-                        name="message" 
-                        cols="30" 
-                        rows="10" 
-                        required></textarea>
-                </label>
+    event.preventDefault();
+    alert(`Name: ${formData.name}, Email: ${formData.email}, Message: ${formData.message}`
+    );
+    };
 
-            </div>
+    const handleReset = () => {
+        setFormData({ name: "", email: "", message: "" });
+    };
 
-            
-            <div className='form-row-b'>
-                <button className='b' type="submit">Send</button>
-                <button className='b' type="reset">Clear</button>
-           
-             </div>
+  return (
+    <form onSubmit={handleSubmit}>
+      <label htmlFor="name">Name:</label>
+      <input type="text" id="name" name="name" value={formData.name} onChange={handleChange}/>
 
+      <label htmlFor="email">Email:</label>
+      <input type="email" id="email" name="email" value={formData.email} onChange={handleChange}/>
 
+      <label htmlFor="message">Message:</label>
+      <textarea id="message" name="message" value={formData.message} onChange={handleChange}/>
 
-
-    </div>
-  )
+      <button type="submit">Submit</button>
+      <button type="reset" onClick={handleReset}
+      >Reset</button>
+    </form>
+  );
 }
-
-export default contact
