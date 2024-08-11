@@ -4,6 +4,11 @@ import './todoApp/css/main.css';
 
 export default function Contact() {
 
+
+
+
+
+
   const [formData, setFormData] = useState({name: "",email: "",message: ""});
 
   const handleChange = (event) => {
@@ -39,6 +44,7 @@ export default function Contact() {
       <button className='fb' type="reset" onClick={handleReset}
       >Reset</button>
     </form>
+    <p>{state}</p>
     </div>
   );
 }
