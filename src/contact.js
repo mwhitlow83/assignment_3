@@ -1,31 +1,12 @@
 import { useState } from "react";
 import './todoApp/css/main.css';
-import { addContacts } from './todoApp/redux/contactReducer';
-import { connect } from 'react-redux';
-
-
-const mapStateToProps = (state) => {
-  return {
-    contacts: state,
-  };
-};
-
-
-const mapDispatchToProps = (dispatch) => {
-  return {  
-    addContact: (obj) => dispatch(addContacts(obj)),
-
-  };
-};
-
-
 
 
 const Contact = (props) => {
 
-  
+  const [formData, setFormData] = useState({firstname: "", lastname: "", email: "", message: ""});
+  const [submitted, setSubmitted] = useState(false);
 
-  const [formData, setFormData] = useState({name: "",email: "",message: ""});
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -35,20 +16,26 @@ const Contact = (props) => {
   const handleSubmit = (e) => {
 
     e.preventDefault();
-    alert(`Name: ${formData.name}, Email: ${formData.email}, Message: ${formData.message}`
-    );
+    alert(`First Name: ${formData.firstname}, Last Name: ${formData.lastname},  Email: ${formData.email}, Message: ${formData.message}`);
+    handleReset();
+    setSubmitted(true);
     };
 
     const handleReset = (e) => {
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ firstname: "", lastname: "" , email: "", message: "" });
     };
 
+
+    if (!submitted) {
   return (
 
     <div className="form">
     <form  onSubmit={handleSubmit}>
-      <label className="cl" htmlFor="name">Name:</label>
-      <input className="if" type="text" id="name" name="name" value={formData.name} onChange={handleChange}/>
+      <label className="cl" htmlFor="name">First Name:</label>
+      <input className="if" type="text" id="firstname" name="firstname" value={formData.firstname} onChange={handleChange}/>
+
+      <label className="cl" htmlFor="name">Last Name:</label>
+      <input className="if" type="text" id="lastname" name="lastname" value={formData.lastname} onChange={handleChange}/>
 
       <label className="cl" htmlFor="email">Email:</label>
       <input className="if" type="email" id="email" name="email" value={formData.email} onChange={handleChange}/>
@@ -56,14 +43,24 @@ const Contact = (props) => {
       <label className="cl" htmlFor="message">Message:</label>
       <textarea id="message" name="message" value={formData.message} onChange={handleChange}/>
 
-      <button className='fb' type="submit"  onClick={() => props.addContact(formData)}
+      <button className='fb' type="submit"  
       >Submit</button>
       <button className='fb' type="reset" onClick={handleReset}
       >Reset</button>
     </form>
-    
+
     </div>
   );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Contact);
+else {
+
+  return (
+    <h1>Thank you for your submission</h1>
+
+  );
+
+}
+
+};
+export default Contact;
