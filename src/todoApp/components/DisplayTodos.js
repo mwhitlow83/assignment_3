@@ -21,22 +21,24 @@ const mapStateToProps = (state) => {
   };
 
 const DisplayTodos = (props) => {
-    const [sort, setSort] = useState('active')
-  return (
+    
+  const [sort, setSort] = useState('active')
+  
+    return (
     <div className='displaytodos'>
       <div className='buttons'>
-        <motion.button 
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        onClick={()=>setSort('active')}>Active</motion.button>
-        <motion.button 
-         whileHover={{ scale: 1.1 }}
-         whileTap={{ scale: 0.9 }}
-        onClick={()=>setSort('completed')}>Completed</motion.button>
-        <motion.button 
-         whileHover={{ scale: 1.1 }}
-         whileTap={{ scale: 0.9 }}
-        onClick={()=>setSort('all')}>All</motion.button>
+          <motion.button 
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+          onClick={()=>setSort('active')}>Active</motion.button>
+          <motion.button 
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+          onClick={()=>setSort('completed')}>Completed</motion.button>
+          <motion.button 
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+          onClick={()=>setSort('all')}>All</motion.button>
      
       </div>
       <ul>
