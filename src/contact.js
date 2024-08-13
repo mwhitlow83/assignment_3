@@ -1,6 +1,6 @@
 import { useState } from "react";
 import './todoApp/css/main.css';
-
+import { motion } from 'framer-motion';
 
 const Contact = (props) => {
 
@@ -43,10 +43,17 @@ const Contact = (props) => {
       <label className="cl" htmlFor="message">Message:</label>
       <textarea id="message" name="message" value={formData.message} onChange={handleChange}/>
 
-      <button className='fb' type="submit"  
-      >Submit</button>
-      <button className='fb' type="reset" onClick={handleReset}
-      >Reset</button>
+      <motion.button 
+       whileHover={{ scale: 1.1 }}
+       whileTap={{ scale: 0.9 }}
+      className='fb' type="submit"  
+      >Submit</motion.button>
+     
+      <motion.button 
+       whileHover={{ scale: 1.1 }}
+       whileTap={{ scale: 0.9 }}
+      className='fb' type="reset" onClick={handleReset}
+      >Reset</motion.button>
     </form>
 
     </div>
