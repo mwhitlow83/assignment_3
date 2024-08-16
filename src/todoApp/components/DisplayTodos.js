@@ -1,3 +1,8 @@
+//matthew whitlow
+//assignment 3
+
+
+
 import React from 'react'
 import { addTodos, removeTodos, updateTodos, completeTodos } from '../redux/reducer';
 import { connect } from 'react-redux';
